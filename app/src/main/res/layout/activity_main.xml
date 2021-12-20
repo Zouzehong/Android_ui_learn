@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/tv_url"
+        android:textColor="@color/red"
+        android:textStyle="bold|italic"
+        android:background="@drawable/tv_shape"
+        android:textSize="18sp"
+        android:shadowColor="@color/white"
+        android:shadowDx="10.0"
+        android:shadowDy="10.0"
+        android:shadowRadius="3.0"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/tv_spannable"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/tv_test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textScaleX="1.0"
+        android:lineSpacingExtra="3dp"/>
+
+    <LinearLayout
+        android:layout_below="@+id/tv_spannable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_change_color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_bg"
+        android:text="Surprise!!!There not are anything"/>
+
+    <Button
+        android:id="@+id/btn_guide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="按钮不可用"/>
+
+    <com.example.android_ui_learn.MyButton
+        android:id="@+id/myBtn"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@color/bottom_bg"/>
+
+    <com.example.android_ui_learn.CircleImageView
+        android:id="@+id/img_circle"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/pen"
+        android:adjustViewBounds="true"
+        android:maxHeight="100dp"
+        android:maxWidth="100dp"
+        android:layout_gravity="center_horizontal"/>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
