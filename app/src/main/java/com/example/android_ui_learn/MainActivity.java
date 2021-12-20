@@ -3,6 +3,8 @@ package com.example.android_ui_learn;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -14,8 +16,8 @@ import android.text.TextPaint;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.text.style.ImageSpan;
-import android.text.util.Linkify;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,12 +25,17 @@ import java.lang.reflect.Field;
 
 public class MainActivity extends AppCompatActivity {
     TextView tv_test,tv_spannable;
+    Button btn_change,btn_guide;
+    CircleImageView img_circle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         tv_test = findViewById(R.id.tv_test);
         tv_spannable = findViewById(R.id.tv_spannable);
+        btn_change = findViewById(R.id.btn_change_color);
+        btn_guide = findViewById(R.id.btn_guide);
+        img_circle = findViewById(R.id.img_circle);
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < 20; i++) {
             sb.append("好友" + i + ", ");
@@ -57,6 +64,19 @@ public class MainActivity extends AppCompatActivity {
         //tv_test.setText(Html.fromHtml(s1));
         tv_test.setMovementMethod(LinkMovementMethod.getInstance());
         tv_spannable.setMovementMethod(LinkMovementMethod.getInstance());
+        btn_guide.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                if(btn_guide.getText().toString().equals("按钮不可用")) {
+                    btn_change.setEnabled(false);
+                    btn_guide.setText("按钮可用");
+                }else {
+                    btn_change.setEnabled(true);
+                    btn_guide.setText("按钮不可用");
+                }
+            }
+        });
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.pen);
+        img_circle.setBitmap(bitmap);
     }
 
     private SpannableStringBuilder addClickPart(String str){
