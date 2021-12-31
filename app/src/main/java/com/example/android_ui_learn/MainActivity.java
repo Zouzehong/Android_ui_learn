@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                     draw.setBounds(0,0,draw.getIntrinsicWidth(),draw.getIntrinsicHeight());
                 } catch (NoSuchFieldException | IllegalAccessException e) {
                     e.printStackTrace();
-
+                    int num = 0;
                 }
                 return draw;
             }
